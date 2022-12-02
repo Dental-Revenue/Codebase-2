@@ -1,0 +1,52 @@
+/* MOBILE PANEL NAVIGATION */
+$sidebar-width: 290px;
+$sidebar-width-neg: -290px;
+.sidr { display: none; position: fixed;top: 0;height: 100%;z-index: 999999;width: $sidebar-width;overflow-x: hidden;overflow-y: auto; &.right {left: auto;right: $sidebar-width-neg;} &.left {left: $sidebar-width-neg;right: auto;}}
+	.sidr #menu-primary-navigation {margin:0;}
+
+#sidr-left{background-color: $dk-grey;-webkit-overflow-scrolling: touch;}
+#sidr-left > .sidr-inner > a{display: none;} /* the schedule button */
+#sidr-left > .sidr-inner > ul{margin: 0 0 30px; padding: 0;list-style: none;}
+	#sidr-left ul a{padding:0 5px 0 15px;display: block;font-size: 16px; line-height:56px;color: $white;font-family: $body-font;text-transform: uppercase;letter-spacing: .05em;font-weight: 900; border-bottom:1px solid rgba($white,0.2);}
+	#sidr-left ul ul{display:none;list-style: none;margin:0;padding: 0 0 15px 15px; }
+	  #sidr-left ul ul a{font-size:15px; text-transform: none; line-height: 40px;}
+	#sidr-left ul li:last-child a {border-bottom:none;}
+	#sidr-left ul.open > ul {display: block;}
+	#sidr-left li.menu-item-has-children > a {padding:0 50px 0 15px; position:relative; &:before{content:''; width:1px; border-right:1px solid rgba($white,0.2); height:100%; position:absolute; top:0; right:50px;}}
+	
+	#sidr-left li.menu-item-has-children {position: relative;}
+	#sidr-left li.menu-item-has-children > span {position: absolute; right:0px; top:0; height:56px; width: 50px; &:after {content:"\f067"; font-family: $font-awesome; color:$white; font-size: 13px; font-weight: 800; position: absolute; top:50%; left:50%; transform: translate(-50%,-50%);}}
+		#sidr-left li.menu-item-has-children.open > span:after {content:"\f068";}
+		#sidr-left ul ul li.menu-item-has-children > span {height:40px;}
+		
+	#sidr-left li.menu-item-has-children.open {background:rgba($white,.2); a {border-bottom: none; &:before {display: none;}} > ul {display: block; margin-top:-8px;}}
+		#sidr-left li.menu-item-has-children.open li.menu-item-has-children.open {background:none; ul {margin:0; padding:0 0 0 15px; a {font-size: 14px; font-weight:400;}}}
+
+#sidr-right{background-color: $dk-grey;box-sizing: border-box;}
+  #sidr-right .option{display: block; font-weight: normal; width: 100%; position: relative;}
+    #sidr-right .option i{font-size: 25px; color: $main-color; text-align: center; position: absolute; top: 15px; left: 15px; width: 30px;}
+    #sidr-right .option > div{display: block; margin: 0; padding:15px 0 15px 65px; font-size: 14px; color: $white; border-bottom: 1px solid rgba($white,.2);}
+    	#sidr-right .option > div .bold {font-size: 16px; font-weight: 800;}
+    	
+    #sidr-right .option:last-child > div {border-bottom: none;}
+  
+  #sidr-right .sidr-inner:nth-child(3){position: absolute;bottom:16px;left: 0;width: 100%;}
+  #sidr-right ul.social{display: block;list-style: none;text-align: center;margin: 0;padding: 0;width: 100%;}
+    #sidr-right ul.social li{display: inline-block;margin: 0 7px;}
+      #sidr-right ul.social li a{font-size: 20px;color: $white; transition:opacity .3s; &:hover{opacity:.7;}}
+  
+  #sidr-right ul.legal{display: none;}
+ 
+	#sidr-right .hour-set {display:block;}
+	
+	#sidr-right .mobile-info-social {position: absolute; bottom: 0; width:100%; text-align: center; padding: 10px 40px; box-sizing:border-box;}	
+		#sidr-right .mobile-info-social span {display: inline-block;}
+			#sidr-right .mobile-info-social span i {font-size: 30px; color:$white; opacity: .85;}
+			#sidr-right .mobile-info-social span a {display:inline-block; padding: 10px;}
+  
+ .sidr-left-open .mobile-nav .fa-bars:before {content:"\f00d";}
+ .sidr-right-open .mobile-nav .fa-info:before {content:"\f00d";}
+  
+  @media all and (max-width: $bp-laptop) {
+		.sidr {display:block;} 
+	}

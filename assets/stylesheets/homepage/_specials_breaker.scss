@@ -1,0 +1,15 @@
+.specials_breaker {padding: 0 0 40px;text-align:center;}
+
+	.specials_breaker h2 {padding-bottom:0;}
+	.specials_breaker p {font-size: 18px;}
+.specials_breaker p {margin: 0em 0 1em 0;}
+
+	.specials_breaker a.btn{background-color: $white; margin-top: 0px; color:$main-color; &:hover {background-color: $black;color: $white;}}
+	
+	.specials_breaker .module-image:after{content:''; position:absolute;height:100%;width:100%;top:0;left:0;background-color: rgba($main-color,.85);}
+		
+//INVERT COLOR SCHEME
+.specials_breaker.invert h2, .specials_breaker.invert p{color: $white;}
+.specials_breaker.invert p:last-child {
+    margin-bottom: 0;
+}

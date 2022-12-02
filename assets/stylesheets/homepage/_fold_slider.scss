@@ -1,0 +1,65 @@
+.fold_slider{padding:0;}
+.fold_slider .module-content {height:100%;}
+.slick-slider {margin-top: 0px;}
+	
+	// General Slide Styling
+	.fold-slide{}
+		.fold-slide .fold-slide-contain{width: 100%;background-image:url('../../assets/images/layout/hp-fold-bg.jpg');background-size: cover;background-position: center center;position: relative;z-index: 2;overflow: hidden;}
+			.fold-slide .fold-slide-contain img {height:100%; width:100%; object-fit:cover;}
+		.fold-slide .fold-overlay{opacity: 1;position: absolute;left: 0;top:0;width: 100%;height: 100%;transition: opacity .4s;z-index: 2;}
+    .fold-slide-text{transition:all .3s ease; transition-delay: .3s; opacity:0; position:absolute; top: 80%; left: 50%; transform: translate(-50%,-50%); text-align: center; width: 90%; max-width: 700px; z-index: 3;}
+    	.fold-slide-text h2,
+      .fold-slide-text p:first-child,
+      .fold-slide-text .fold-slider-subtitle{font-weight: 900;font-size: 56px;line-height:90%;text-transform: uppercase;color: $white;padding-top: 18px;margin:0;&:after{content:'';width: 100px;height: 4px;background-color: $white;margin: 30px auto;display: none;}}
+			.fold-slide-text p{font-size: 18px;margin: 0 0 1.5em;color: $white;}
+			.fold-slide-text.align-left {text-align: center; left: 7%; transform: translate(0,-50%); h2:after{margin:30px 0;}}
+			.fold-slide-text.align-right {text-align: center; left: initial; right:7%; transform: translate(0,-50%); h2:after{margin-top:30px; margin-bottom:30px; margin-left: calc(100% - 100px);}}
+			
+		.slick-active .fold-slide-text {top:50%; opacity:1;}
+	
+	// Slick Slider (if more than one slide)
+  .slick-fold, .slick-fold .slick-list,.slick-fold .slick-track{height: 100%;z-index: 2;}
+  	.slick-fold .fold-slide{display: none;}
+  		.slick-fold .fold-slide-text{@include center(left);opacity: 0;}
+  
+  .slick-fold .slick-dots{margin: 0;position: absolute;right: 40px;bottom: 40px;background-color: transparent;border: 0 none;padding: 0;z-index: 3;}
+    .slick-fold .slick-dots li{clear: both;}
+      .slick-fold .slick-dots li button{margin: 5px 0;background-color: transparent;border-color: $white;}
+      .slick-fold .slick-dots li.slick-active button{background-color: $white;}
+      
+  .slick-fold .fold-slide.slick-current .fold-slide-text{@include center(both);opacity: 1;}
+  
+  .fold_slider .slick-dots {position: absolute; bottom:3%; margin: 0 auto; padding:0; right:2%; width:20px;border:0;box-shadow: none;}
+  	.fold_slider .slick-dots li button {margin-bottom: 7px;}
+  	.fold_slider .slick-dots li.slick-active button {background-color: $main-color; border-color: $main-color;}
+
+    .fold_slider .single_btn {
+      margin-top: 30px;
+    }
+    .fold_slider .single_excerpt {
+      margin-top: 20px;
+    }
+    .fold_slider .single_title {
+      margin-top: 20px;
+    }
+  
+.fold-video {
+    width: 100%!important;
+    object-fit: cover;
+}
+
+@media all and (max-width: $bp-laptop) {
+  .fold-slide-text h2,
+  .fold-slide-text p:first-child {font-size: 36px;&:after{margin: 20px auto;}}
+  .fold-slide-text p{font-size: 15px;}
+}
+
+@media all and (max-width: $bp-phablet) {
+  .slick-fold .slick-dots{display: none;}
+}
+
+@media all and (max-width: $bp-phone) {
+  .fold-slide-text h2,
+  .fold-slide-text p:first-child {font-size: 24px;&:after{margin: 10px auto;height: 2px}}
+  .fold-slide-text p{font-size: 13px;}
+}

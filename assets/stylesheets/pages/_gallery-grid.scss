@@ -1,0 +1,49 @@
+.g-grid-cont{@include clearfix();}
+
+  /* filters */
+  .g-grid-filters{text-align: center;padding: 10px 0 30px}
+    .g-grid-filters a{margin-bottom: 10px; border:3px solid $main-color; background-color:$main-color; color:$white; display:inline-block; border-radius:$buttons-style; font-weight:800; text-transform:uppercase; text-decoration:none; cursor:pointer; letter-spacing:.05em; font-size:11px; padding:12px 18px; &:hover{background-color:transparent; color:$main-color;}}
+    .g-grid-filters a.active{background-color: transparent;color: $main-color; &:hover{background-color:$main-color; color:$white;}}
+  
+  /* patient grid */
+  .g-grid-grid{@include clearfix();}
+    .g-grid-sizer{width: 25%;}
+    .g-grid-grid-item{width: 25%;padding: 6px;box-sizing: border-box;float:left;}
+    
+      .g-grid-patient{border-bottom: 4px solid $md-grey;display: block;position: relative;}
+        .g-grid-patient img{width: 100%;height: auto;display: block;}
+        .g-grid-patient span.excerpt{display: block;padding: 20px;margin: 0;background-color: $white;font-size: 13px;position: relative;z-index: 2;box-shadow: 0 0 8px rgba($black,.1);}
+        .g-grid-patient span.overlay{display: block;position: absolute;top:0;right:0;bottom:0;left:0;background-color: rgba($main-color,0);z-index: 1;transition: background-color .6s; &:before{content:"";display: block;position: absolute;top:20px;right: 20px;width: 60px;height: 28px;background-image:url('../../images/layout/icon-ba.png');background-position: right top;background-size: contain;background-repeat: no-repeat;transform: translate(-50px,0);opacity: 0;transition:transform .3s, opacity .3s;}}
+        
+        .g-grid-patient:hover span.overlay{background-color: rgba($main-color,0.75); &:before{transform: translate(0,0);opacity: 1;}}
+      
+        .g-grid-lightbox-set{display: inline-block;margin: 0 auto;box-shadow:0 0 8px rgba($black, 0.6);}
+          .g-grid-lightbox-set img{height:50%;width: auto;display: block;margin: 0 auto;}
+  
+  
+  /* magnific overrides */
+  body.smile-gallery .mfp-content{text-align: center;}
+  .custom-mfp-close{position: fixed; top:10px; right: 10px; width: 60px;height: 60px;line-height: 60px; text-align: center;padding: 0; margin:0; font-size: 60px;color:$white;transition:opacity .3s;background-color:transparent;border:0 none; &:hover{opacity: .7;}}
+  body.smile-gallery .mfp-bottom-bar{display: none;}
+   
+
+  /* custom MQs for lightbox */
+  @media all and (max-aspect-ratio: 4/5) {
+    .g-grid-lightbox-set{height: auto !important;width: 100% !important;}
+      .g-grid-lightbox-set img{height: auto !important;width: 100% !important;}
+  }
+
+
+@media all and (max-width: $bp-laptop) {
+  .g-grid-sizer,.g-grid-grid-item{width: 33.333%;}
+}
+
+@media all and (max-width: $bp-tablet) {
+  .g-grid-sizer,.g-grid-grid-item{width: 50%;}
+}
+
+@media all and (max-width: $bp-phablet) {
+  .g-grid-patient span.excerpt{display: none;}
+  
+  .g-grid-filters a{padding: 4px;font-size: 10px;}
+}

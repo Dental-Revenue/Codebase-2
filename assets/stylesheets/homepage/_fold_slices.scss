@@ -1,0 +1,53 @@
+.fold_slices {padding-bottom:0px;}
+
+.fold-slices{overflow: hidden;background-color: $black; height:100%; &:after{content:"";position: absolute;top:0;left: 0;width: 100%;height: 200px;background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, rgba($black,.7)),color-stop(1, rgba($black,0)));background-image: -o-linear-gradient(bottom, rgba($black,.7) 0%, rgba($black,0) 100%);background-image: -moz-linear-gradient(bottom, rgba($black,.7) 0%, rgba($black,0) 100%);background-image: -webkit-linear-gradient(bottom, rgba($black,.7) 0%, rgba($black,0) 100%);background-image: -ms-linear-gradient(bottom, rgba($black,.7) 0%, rgba($black,0) 100%);background-image: linear-gradient(to bottom, rgba($black,.7) 0%, rgba($black,0) 100%);z-index: 3;}}
+
+.fold-slice{width: 20%;height:100%;float: left;position: relative;transition:width .4s;}
+	.fold-slice img {height:100%; width:100%; object-fit:cover; position: absolute; top:0; left:0; right:0; bottom:0;}
+	.fold-slice .fold-overlay{opacity: 0;position: absolute;left: 0;top:0;width: 100%;height: 100%;transition: opacity .4s;z-index: 2;}
+	.fold-slice:after{content:"";display: block;position: absolute;top:0;left:0;width: 100%;height: 100%;background-color: rgba($black,.8);transition: background .4s ease-in-out;z-index: 1;}
+	.fold-slice:hover:after{background-color: rgba($black,.3);}
+	
+	// Active state
+	.fold-slice.active{width: 60%;}
+		.fold-slice.active .fold-overlay{opacity: 1;}
+		.fold-slice.active:after{background-color: transparent;}
+		.fold-slice.active .fold-slice-content{opacity: 1;}
+	
+	// Content styling
+	.fold-slice-content{position: absolute;left: -499px;bottom: 0%;opacity: 0;transition: all .2s ease;width: 500px;z-index: 3;}
+		.fold-slice-content h2,
+		.fold-slice-content p:first-child {padding: 10px 10px 10px 60px;color: $white;display: inline-block;font-size: 40px;}
+		.fold-slice-content p{padding-left: 60px;color: $white;}
+		.fold-slice-content a{margin: 20px 0 60px 60px;}
+		.fold-slice-content.align-center {text-align: center; h2 {padding:10px 30px;} p {padding: 0 30px;} a {margin:20px 0 60px;}}
+		.fold-slice-content.align-right {text-align: right; h2 {padding:10px 60px 0px 10px;} p {padding: 0 60px 0 0;margin: 0 0 1.5em 0;} a {margin:20px 60px 60px 0;}}
+	.fold-slice-content.onScreen {left:0;}
+		.fold-slice-content.onScreen.align-center {left:50%; transform: translate(-50%,0);}
+		.fold-slice-content.onScreen.align-right {left:initial; right:0;}
+	
+.fold-slices-mobile{display:none;}	
+
+@media all and (max-width: $bp-laptop) {
+  .fold-slice{width: 10%;}
+  .fold-slice.active{width: 80%;}
+  .fold-slice-content{width: 400px; left:0; }      
+}
+
+@media all and (max-width: $bp-phablet) { 
+	.fold-slices {display:none;}
+	.fold-slices-mobile{display:block;}
+  	.fold-slice-content, .fold-slice-content.onScreen{width: 90%; height:auto!important; left: 5%; right:initial; top: 50%;transform: translateY(-50%); position: relative; &.align-right {left:5%; right:initial;} &.align-center {transform: translate(-50%, -50%);}}
+  		.fold-slice-content h2,
+		.fold-slice-content p:first-child {font-size: 36px;padding: 10px!important;}
+  		.fold-slice-content p{font-size: 15px;padding: 0 10px!important;}
+  		.fold-slice-content a{margin: 20px 0 0 0!important;}
+  		
+  .fold-slice.active{width: 100%;}
+  .fold-slice {width:100%!important; &:after {opacity:0;}}
+  .fold-slice .fold-overlay, .fold-slice-content {opacity:1;}
+  
+  .fold-slices-mobile .slick-dots {position: absolute;bottom: 0;left: 50%; border:none; transform: translateX(-50%); &:hover {transform:translateX(-50%);}}
+}    
+      
+      

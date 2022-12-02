@@ -1,0 +1,60 @@
+//WELL BLOCK
+.well{min-height: 20px; margin-bottom: 20px; background-color: $md-lt-grey;border: 1px solid rgba(0, 0, 0, 0.05); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top: 0px;padding: 40px; box-sizing:border-box;}
+	.well h4{font-size:30px;}
+	.well > *:last-child{margin-bottom:0;}
+	
+//MINI-GALLERY
+.mini-gallery-container{ width:100%; background-color: $md-lt-grey;border: 1px solid rgba(0, 0, 0, 0.05); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin: 0px; position:relative; padding:40px; box-sizing:border-box;}
+	.mini-gallery-container h2{text-align:center; margin:0 0 20px;}
+	
+	//SLIDER STYLE
+	.mini-gallery-container.slider{text-align:center; padding-bottom:72px;}
+	//.mini-gallery-container.slider h2{margin-top:5%;}
+	.mini-gallery-container .mini-gallery-slider-contain{position:relative; display:block; height:0; padding-bottom:75%;}
+	.mini-gallery-container .slick-mini-gallery{position:absolute; top:0; left:0; right:0; bottom:0; }
+	//.mini-gallery-container.has_title .slick-mini-gallery{top:calc(10% + 44px);}
+		.slick-mini-gallery .mini-gallery-slide{height:100%; text-align:center; background-position:center center; background-size:cover;}
+			
+			.slick-mini-gallery .slick-list{height:100%;}
+			.slick-mini-gallery .slick-track{height:100%;}
+			.slick-mini-gallery .slick-slide>div{height:100%;}
+			
+			.slick-mini-gallery .mini-gallery-slide img{height:100%; display:inline-block;}
+			
+		.slick-mini-gallery ul.slick-dots{margin:20px 0 0; border:none; box-shadow:none; padding:0px;}
+		
+		//GRID STYLE
+		.mini-gallery-container .grid-mini-gallery{position: relative; padding: 0; margin: 0 auto; @include clearfix();}
+			.grid-mini-gallery a.mini-gallery-grid-item{margin-left: 4.4%; float: left; width: 30.4%; height:0; padding-bottom:30.4%; background-size:cover; background-position:center center; display:block; &:first-child{margin-left:0;} &:nth-child(3n + 4){margin-left: 0px; clear:both;} &:nth-child(n+4){margin-top:4.4%;}}
+			
+//FAQs
+.faq_shortcode_contain{min-height: 20px; margin-bottom: 20px; background-color: $md-lt-grey;border: 1px solid rgba(0, 0, 0, 0.05); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top: 0px;padding: 40px; box-sizing:border-box;}
+	.faq_shortcode_contain .faq_accordion{}
+		.faq_accordion span[data-accordion="question"]{display:block; margin-bottom: 10px;}
+			.faq_accordion span[data-accordion="question"] a{position:relative; padding-left:20px; &:before{content:"\f067"; margin-right:10px; font-family:'Font Awesome 5 Free'; color:$main-color; position:absolute; display:block; left:0; top:3px;font-size:14px;}}
+			.faq_accordion span[data-accordion="question"] a.active:before{content:"\f068";}
+		.faq_accordion span[data-accordion="answer"]{display:block;}
+		
+//TESTIMONIALs
+.testimonials_shortcode_contain{min-height: 20px; margin-bottom: 20px; background-color: $main-color;border: 1px solid rgba(0, 0, 0, 0.05); -webkit-border-radius: 10px; -moz-border-radius: 10px; border-radius: 10px; margin-top: 0px;padding: 40px; box-sizing:border-box; text-align:center;}
+	.testimonials_shortcode_contain h2{color:$white;}
+	.testimonials_shortcode_contain p{color:$white; font-size:18px;}
+		.testimonials_shortcode_contain p span{display:block; margin-top:20px !important; font-weight:bold; text-transform:uppercase;}
+	
+	.slick_shortcode_testimonials ul.slick-dots{margin:20px 0 0; border:none; box-shadow:none; padding:0px;}
+		.slick_shortcode_testimonials .slick-dots li button{background-color:#fff; border:none;}
+		.slick_shortcode_testimonials .slick-dots li.slick-active button{background-color:#fff; }
+
+@media all and (max-width: $bp-tablet) {
+}
+
+@media all and (max-width: $bp-phablet) {
+	//.mini-gallery-container.slider{ padding-bottom:100%; }
+}
+
+@media all and (max-width: $bp-phone) {
+	.grid-mini-gallery a.mini-gallery-grid-item{margin:4.4% 0 0 0; width:100%; padding-bottom:60%; &:first-child{margin-top:0;}}
+}
+
+@media all and (max-width: $bp-sm-phone) {
+}
